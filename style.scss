@@ -1,0 +1,1744 @@
+/*
+ Theme Name:   Natalie Miles Theme
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Twenty Twenty Child Theme
+ Author:       Red Bric Kreative
+ Author URI:   http://example.com
+ Template:     twentytwenty
+
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twentytwenty
+*/
+
+@import 'style2.scss';
+
+/**
+-------------------------------
+
+Variables and Mixins
+
+-------------------------------
+**/
+ 
+$purple: #8A7CE2;
+$purple-light: #EAEAF9;
+$whiteBg: #E5E5E5;
+$link: #63D9CD;
+
+@mixin for-tablet--large {
+    @media (max-width: 999px) { @content }
+}
+
+@mixin for-tablet--small {
+    @media (max-width: 768px) { @content }
+}
+
+@mixin for-mobile--large {
+    @media (max-width: 640px) { @content }
+}
+
+@mixin for-mobile--small {
+    @media (max-width: 400px) { @content }
+}
+
+@mixin rotate($val) {
+    transform: rotate($val);
+    -webkit-transform: rotate($val);
+    -moz-transform: rotate($val);
+    -ms-transform: rotate($val);
+    -o-transform: rotate($val);
+}
+
+
+/**
+-------------------------------
+
+Fonts
+
+-------------------------------
+**/
+
+@import url("//hello.myfonts.net/count/3ae19e");
+
+  
+@font-face {font-family: 'AvenirLTPro-Roman';src: url('fonts/3AE19E_0_0.eot');src: url('fonts/3AE19E_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/3AE19E_0_0.woff2') format('woff2'),url('fonts/3AE19E_0_0.woff') format('woff'),url('fonts/3AE19E_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Bold';src: url('fonts/3AE19E_1_0.eot');src: url('fonts/3AE19E_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/3AE19E_1_0.woff2') format('woff2'),url('fonts/3AE19E_1_0.woff') format('woff'),url('fonts/3AE19E_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Heavy';src: url('fonts/3AE19E_2_0.eot');src: url('fonts/3AE19E_2_0.eot?#iefix') format('embedded-opentype'),url('fonts/3AE19E_2_0.woff2') format('woff2'),url('fonts/3AE19E_2_0.woff') format('woff'),url('fonts/3AE19E_2_0.ttf') format('truetype');}
+
+
+
+
+/**
+-------------------------------
+
+Isolate CSS to child theme only
+
+-------------------------------
+**/
+
+#nm-style-theme {
+
+
+/**
+-------------------------------
+
+Global
+
+--
+Place button styles, typography, containers, columns etc. here
+--
+
+-------------------------------
+**/
+
+
+/**
+-------------------------------
+
+Typography
+
+-------------------------------
+**/
+
+h1 {
+    font-family: Nexa-Heavy;
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $purple;
+    @include for-tablet--small {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+    }
+}
+
+h2 {
+    font-size: 4.0rem;
+    line-height: 5.0rem;
+    letter-spacing: 0.08em;
+    color: $purple;
+    &.small {
+        font-size: 3.0rem;
+        line-height: 4.0rem;        
+    }
+    @include for-tablet--small {
+        font-size: 3.0rem;
+        line-height: 4.0rem;
+    }
+}
+
+h3 {
+    font-size: 3.0rem;
+    line-height: 4.5rem;
+    letter-spacing: 0.08em;
+    @include for-tablet--small {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+    }   
+}
+
+h4, h5, h6 {
+    letter-spacing: 0.08em;
+}
+
+h2, h3, h4, h5, h6 {
+    color: $purple;
+    font-family: Nexa-Heavy;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: AvenirLTPro-Roman;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.05em;
+    color: #000000;
+    max-width: 1080px;
+    margin: 0 auto 1em auto;
+    &.medium {
+        font-size: 2.5rem;
+        line-height: 3.2rem;
+    }
+    &.large {
+        font-size: 3.0rem;
+        line-height: 4.0rem;
+    }
+    &.disclaimer {
+        color: $purple;
+        font-size: 1.5rem;
+        font-family: Nexa-Heavy;
+        text-transform: uppercase;
+    }
+
+}
+
+.entry-content ul {
+    font-family: AvenirLTPro-Roman;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;   
+}
+
+li {
+    line-height: 1.5;
+    margin: 1.5rem 0 0 2rem;
+}
+
+a {
+    color: $link;
+}
+
+.has-background-color {
+    color: #fff;
+}
+
+.quote {
+    font-family: Nexa-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.0rem;
+    line-height: 4.0rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: $purple;
+    @include for-tablet--small {
+	font-size: 2.0rem;
+    line-height: 3.0rem;
+    }
+}
+
+.nexa-heavy {
+    font-family: Nexa-Heavy;
+}
+
+blockquote, .blockquote {
+    p {
+        font-family: Nexa-Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 3.0rem;
+        line-height: 4.5rem;
+        text-align: center;
+        letter-spacing: 0.08em;
+        color: $purple;
+    }
+    border: none;
+    padding-left: 0;
+}
+
+.align--center {
+    text-align: center;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+.title--border {
+    color: $purple;
+    position: relative;
+    z-index: 10;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    border-left: 3px solid #8A84D6;        
+    h1 {
+        line-height: 80px;
+        margin-top: 0;
+        margin-bottom: 40px;
+        text-align: left;
+        margin-left: 20px;
+    }
+}
+
+.title--border-bottom {
+    border-bottom: 2px #fff solid;
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 3rem;
+    @include for-tablet--small {
+        margin: 0 3rem;
+    }
+}
+
+@media (min-width: 700px) {
+    h1, .heading-size-1, h2, .heading-size-2, h3, .heading-size-3, h4, h5 {
+        margin: 0 auto 3rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #page-15 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    #page-791 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    .page-id-17 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    #page-13 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    #page-841 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    #page-855 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    #page-789 {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+}
+
+.wp-block-media-text__content p {
+    padding: 0;
+}
+
+/**
+-------------------------------
+
+Global elements
+
+-------------------------------
+**/
+
+#site-content {
+    position: relative;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.list-inline li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    background: transparent;
+}
+
+button {    
+    font-family: Nexa-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #fff;  
+    background-color: $purple;
+    border: 2px solid $purple;
+}
+
+.button {
+    font-family: Nexa-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #fff;  
+    background-color: $purple;
+    border: 2px solid $purple;
+    &--primary {
+        color: #fff;  
+        background-color: $purple;
+        border: 2px solid $purple;
+    }
+    &--secondary {
+        color: $purple;
+        background-color: #fff;
+        border: 2px solid $purple;
+    }
+    &--footer {
+        color: #fff;  
+        background-color: $purple!important;
+        border: 1px solid #fff;
+    }
+}
+
+.wp-block-button a {
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+    padding: 20px 30px;   
+}
+
+@media (min-width: 1280px) {
+    .entry-content > .alignwide {
+        max-width: 108rem;
+        width: 108rem;
+    }
+}
+
+@media (min-width: 1080px) {
+    .entry-content > .alignwide {
+        max-width: 108rem;
+        width: 108rem;
+    }
+}
+
+.geo {
+    height: 120px;
+    margin: 0 auto;
+}
+
+.no-margin {
+    margin: 0 auto;
+}
+
+.no-margin--left {
+    margin-left: 0;
+}
+
+.padding--left-40 {
+    padding-left: 4rem;
+} 
+
+.no-text-transform {
+    text-transform: none;
+}
+
+.entry-content hr::after, .entry-content hr::before {
+    display: none;
+}
+
+.hr {
+    max-width: 320px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-top: 3px solid $purple;
+    &--white {
+        border-top: 3px solid #fff;
+    }
+    &--full {
+        max-width: 100%;
+        margin: 0 auto;
+        margin-bottom: 0;
+    }
+}
+
+.svg-background {
+    position: absolute;
+    top: -450px;
+    left: 0;
+    width: 100%;
+    min-width: 1400px;
+    transform: scaleX(1.2);
+}
+
+
+.rainbow {
+    text-align: center;
+    padding: 100px 0;
+    background: url('/wp-content/themes/natalie-miles/assets/waves-rainbows/rainbow-gradient.jpg') no-repeat;
+    background-size: cover;
+    p, h1, h2, h3 {
+       color: #fff;       
+    }
+    p {
+        margin-top: 3rem;
+        @include for-tablet--small {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+    }
+}
+
+.purple-wave {
+    height: 300px;
+    background: transparent url('/wp-content/themes/natalie-miles/assets/waves-rainbows/wave--offerings.png') center top no-repeat;
+    background-size: 100% 300px;
+    @include for-tablet--small {
+        height: 180px;
+        background-size: 150% 180px;
+    }
+}
+
+.purple--light {
+    background-color: $purple-light;
+}
+
+.purple {
+    background-color: $purple;
+}
+
+.wp-block-columns, .wp-block-gallery {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 10rem 0;
+    @include for-tablet--small {
+        padding: 5rem 0;
+    }  
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.container--slim {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.container--full {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+input[type=text] {
+    border: 0;
+    border-radius: 0;
+    background: #eaeaf9;
+    font-family: AvenirLTPro-Roman;
+    font-style: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    color: $purple;
+}
+
+input[type=email] {
+    border: 0;
+    border-radius: 0;
+    background: #eaeaf9;
+    font-family: AvenirLTPro-Roman;
+    font-style: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    color: $purple;
+}   
+
+input[type=submit] {
+    text-decoration: none;
+}
+
+.formkit-field {
+    margin: 0 auto;
+    max-width: 240px;
+    margin-bottom: 20px;   
+}
+
+.form--newsletter {
+    input[type=text], input[type=email] {
+        font-size: 14px;
+        line-height: 21px;
+        max-width: 240px;
+        text-align: center;
+    }
+    button {
+        margin: auto;
+        display: block;           
+    }
+}
+
+.form--contact {
+    input[type=text] {
+        font-size: 30px;
+        line-height: 41px;
+    }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $purple;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: $purple;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $purple;
+}
+
+::placeholder {
+  color: $purple;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: $purple;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: $purple;
+}
+
+.flex--center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.wave-up,
+.wave-down {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    z-index: -1;
+
+    @include for-tablet--small {
+        height: 200px;
+    }
+}
+
+.wave-up {
+    background: transparent url('/wp-content/themes/natalie-miles/assets/waves-rainbows/wave-top.svg') center bottom/100% auto no-repeat;
+    top: 4px;
+}
+
+.wave-down {
+    background: transparent url('/wp-content/themes/natalie-miles/assets/waves-rainbows/wave-bottom.svg') center top/100% auto no-repeat;
+    top: -2px;
+}
+
+
+
+
+.modal-menu > li > a,
+.modal-menu > li > .ancestor-wrapper > a {
+	font-size: 1.6rem;
+}
+
+.menu-modal-inner {
+	background: $purple;
+}
+
+.modal-menu {
+
+   	font-family: Nexa-Bold;
+   	text-transform: uppercase;
+    li {
+        background: $purple;
+		a {
+
+		}
+    }
+    a {
+        color: #fff;
+    }
+}
+
+.nm-style-body {
+
+/**
+-------------------------------
+
+Remove Page Title
+
+-------------------------------
+**/
+
+
+    .entry-header {display: none;}
+
+
+/**
+-------------------------------
+
+Background SVG for most pages
+
+-------------------------------
+**/
+
+    .nm-body-bg {
+        position: absolute;
+        top: -20rem;
+        left: 0;
+        width: 100%;
+        min-width: 1700px;
+        transform: scaleX(1.2);
+    }
+
+}
+
+
+/**
+-------------------------------
+
+Home
+
+-------------------------------
+**/
+
+.header--home {
+    &__text {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    @media (min-width: 601px) {
+        &__title {
+            margin-left: 5.0rem;
+            margin-bottom: -10.5rem;
+            span {
+                font-size: 2.2rem;
+            }
+        }
+        &__text {
+            //background-color: rgba(255, 255, 255, 0.8);
+            padding: 8rem 6rem 2rem 4rem;
+            margin-right: 0;
+            margin-left: auto;
+            width: 80%;
+        }
+        .wp-block-media-text__media {
+            margin-left: -1.5rem;
+            max-width: 80%;
+        }
+        .wp-block-media-text__content {
+            margin-right: -1.5rem;
+            padding: 0;
+        }
+        &__button {
+            margin-top: -6.7rem;
+            margin-right: 2rem;
+        }  
+    }
+    @media (max-width: 600px) { 
+        .wp-block-media-text__media {
+            grid-row: 1;
+        }
+        .wp-block-media-text__content {
+            grid-row: 2;
+        }
+        &__button { 
+            text-align: center;
+            margin-top: 4rem;
+            margin-right: auto;
+            //margin-bottom: 4rem;
+            margin-left: auto;
+            float: none;
+        }
+    }
+}
+
+.feature {
+    position: relative;
+    gap: 8rem;
+    max-width: 100rem;
+    &--reverse {
+        @media (max-width: 600px) {
+            .wp-block-media-text__media {
+                grid-row: 1;
+            }
+            .wp-block-media-text__content {
+                grid-row: 2;
+            }
+        }
+    }
+    .wp-block-media-text__media {
+        position: relative;
+        z-index: 1;
+        &>img {
+            position: relative;
+            z-index: 3;
+        }
+        &:after {
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            border-style: solid;
+            border-width: 8px 8px 8px 8px;
+            -moz-border-image: url('/wp-content/uploads/feature__border.png') 10 10 10 10 stretch stretch;
+            -webkit-border-image: url('/wp-content/uploads/feature__border.png') 10 10 10 10 stretch stretch;
+            -o-border-image: url('/wp-content/uploads/feature__border.png') 10 10 10 10 stretch stretch;
+            border-image: url('/wp-content/uploads/feature__border.png') 10 10 10 10 stretch stretch;
+        }
+    }
+}
+
+/**
+-------------------------------
+
+Blog
+
+-------------------------------
+**/
+
+
+.blog {
+    background: url('/wp-content/themes/natalie-miles/assets/waves-rainbows/rainbow-gradient.jpg') no-repeat;
+    overflow: hidden;
+    background-position: top center;
+    background-size: 100% 610px;
+    background-color: $purple-light;
+    h1, h2, h3, h4, h5, p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    h1 {
+        margin-bottom: 6rem;
+    }
+    h2 {
+        font-family: Nexa-bold;
+        font-size: 25px;
+        line-height: 40px;
+    }
+    li { 
+        list-style-type: none;
+        margin: 0;
+    }
+    .geo {
+        margin-bottom: 80px;
+    }
+    &__container {
+        background: #fff;
+        max-width: 1080px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 180px;
+        padding-top: 80px;
+        padding-bottom: 0;
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(30px, 240px) minmax(280px, auto) minmax(30px, 240px);
+        grid-template-rows: auto auto auto auto auto;
+        @include for-tablet--small {
+            margin-top: 0;
+        }
+        // @include for-tablet--small {
+        //     grid-template-columns: 120px auto 120px;
+        // }
+        //@include for-mobile--large {
+            //grid-template-columns: 40px auto 40px;
+        //}
+    }
+    &__title {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    &__date {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;       
+        p {
+            text-transform: uppercase;
+            color: $purple;
+            font-weight: 800;
+            font-family: Nexa-Heavy;
+            transform: rotate(270deg);
+            @include for-mobile--large {
+                //width: 16rem;
+                //transform: translateX(-6rem) rotate(270deg);
+            }
+        }
+    }
+    &__image {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        margin-bottom: 6rem;
+    }
+    &__main-content {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;       
+    }
+    &__pagination {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;        
+        display: flex;
+        justify-content: space-around;
+        max-width: 48rem;
+        margin: 8rem auto 0 auto;
+        padding-bottom: 4rem;
+        @include for-tablet--small {
+            flex-direction: column;
+            margin: 6rem auto 0 auto;
+            padding-bottom: 4rem;            
+        }
+        .button {
+            width: 22rem;
+
+            &:nth-child(2) {
+                margin-left: 6rem;
+                @include for-tablet--small {
+                    margin-left: 0;
+                    margin-top: 4rem;
+                }               
+            }
+        }
+    }
+    &__link--intuitive-hits {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;  
+        padding-bottom: 8rem;
+        display: flex;
+        justify-content: space-around;
+        .button {
+            width: 22rem;
+        }        
+    }
+
+} 
+
+.archive--blog {
+    h1, h2, h3 {
+        text-align: center;
+    }
+    &__query {
+        max-width: 1080px;
+        width: 100%;
+        margin: 0 auto;
+
+        .query__item {
+            h1 {
+                text-align: left;
+            }
+            .button {
+                margin-top: 3rem;
+                @include for-tablet--small {
+                    margin-left: 3rem;
+                }
+            }
+            img {
+                @include for-tablet--small {
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+            }
+            padding: 8rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 80px;
+            grid-row-gap: 80px; 
+            border-bottom: 5px solid $purple-light;
+            @include for-tablet--small {
+                grid-template-columns: 1fr;
+            }  
+        }
+        .query__navigation {
+            padding: 8rem 0;
+            ul {
+                display: flex;
+                justify-content: center;
+            }
+            display: flex;
+            justify-content: space-around;
+            padding: 8rem 0;
+            .page-numbers {
+                font-family: Nexa-Heavy;
+                color: $purple;
+                font-size: 1.6rem;
+                text-decoration:none;
+                display: block;
+                text-align: center;
+                line-height: 2;
+                background-color: $purple-light;
+                cursor: pointer;
+                padding: 1rem 0;
+                width: 5rem;
+                height: 5rem;
+                @include for-tablet--small {
+                    background-color: transparent;
+                    font-size: 1.2rem;
+                    width: 4rem;
+                    height: 4rem;
+                }
+                &.current {
+                    background-color: $purple;
+                    color: #fff;
+                }
+                &.prev {
+                    width: 16rem;
+                    @include for-tablet--small {
+                        width: 8rem;
+                    }
+                }
+                &.next {
+                    width: 16rem;
+                    @include for-tablet--small {
+                        width: 8rem;
+                    }                
+                }           
+                &.dots {
+                    background-color: transparent;
+                }
+            }   
+        }
+        /*
+        .query__navigation li a,
+        .query__navigation li a:hover,
+        .query__navigation li.active a,
+        .query__navigation li.disabled {
+            font-family: Nexa-Heavy;
+            color: $purple;
+            font-size: 2rem;
+            text-decoration:none;
+            display: block;
+            text-align: center;
+        }
+         
+        .query__navigation li {
+            display: block;
+            width: 6rem;
+            height: 6rem;
+            line-height: 2;
+            margin: 0 0 0 6rem;
+            &:first-child {
+                margin: 0 0 0 0rem;
+            } 
+            &.next {
+                width: 13rem;
+            }
+            &.prev {
+                width: 13rem;
+            }
+        }
+        
+        .query__navigation li a,
+        .query__navigation li a:hover,
+        .query__navigation li.active a,
+        .query__navigation li.disabled {
+            background-color: $purple-light;
+            cursor: pointer;
+            padding: 1rem 2rem;
+            //padding: 0.75rem;
+        } 
+         
+        .query__navigation li a:hover,
+        .query__navigation li.active a {
+            background-color: $purple-light;
+        }
+        */
+    }
+}
+
+/**
+-------------------------------
+
+Podcast
+
+-------------------------------
+**/
+
+.podcast {
+    background: url('/wp-content/themes/natalie-miles/assets/waves-rainbows/rainbow-gradient--vertical.jpg') no-repeat;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    h1, h2, h3, h4, h5, p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    h2 {
+        font-family: Nexa-bold;
+        font-size: 25px;
+        line-height: 40px;
+    }
+    li { 
+        list-style-type: none;
+        margin: 0;
+    }
+    ul, ol {
+        margin: 0 0 3rem 0;
+    }
+    &__container {
+        background: #fff;
+        max-width: 990px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 180px;
+        //padding: 240px;
+        padding-top: 160px;
+        padding-bottom: 0;
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(30px, 240px) minmax(280px, auto) minmax(30px, 240px);
+        grid-template-rows: auto auto auto auto;
+        @include for-tablet--small {
+            margin-top: 0;
+            padding-top: 80px;
+        }       
+
+    }
+    &__title {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    &__number {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;
+        p {
+            text-transform: uppercase;
+            color: $purple;
+            font-weight: 800;
+            font-family: Nexa-Heavy;
+            letter-spacing: 0.08em;
+            margin-bottom: 0;
+            transform: rotate(270deg);
+            @include for-mobile--large {
+                transform: rotate(270deg) translateY(-50px);
+                min-width: 16rem;
+            }   
+        }
+    }
+    &__image {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+    }
+    &__main-content {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;       
+    }
+    &__summary {
+        .geo {
+            margin-top: 80px;
+        }
+    }
+    &__discussion {
+        margin-bottom: 80px;
+        .geo {
+            margin-top: 80px;
+        }
+    }   
+    &__additional {
+        margin-bottom: 40px;
+        h2 {
+            //color: #000;
+        }    
+    }  
+    &__query {
+        width: 1080px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 80px;
+        grid-row-gap: 80px;
+        //display: flex;
+        //align-items: center;
+        //justify-content: space-between;
+        .query__item {
+            flex: 1 1 33%;
+        }
+    }
+    &__pagination {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5; 
+        display: flex;
+        @include for-tablet--small {
+            flex-direction: column;
+            margin: 6rem auto 0 auto;
+            padding-bottom: 6rem;            
+        }
+        justify-content: space-around;
+        max-width: 48rem;
+        margin: 12rem auto 0 auto;
+        padding-bottom: 12rem;
+        .button {
+			@include for-tablet--small {
+	            flex-direction: column;
+	            margin-bottom: 2rem;
+	        }
+            width: 22rem;
+            &:nth-child(2) {
+            	margin-left: 6rem;
+            	@include for-tablet--small {
+		            margin-left: 0;
+		        }
+            }
+        }
+    }    
+} 
+
+.archive--podcast {
+    h1, h2, h3 {
+        text-align: center;
+    }
+    position: relative;
+    overflow: hidden;
+    @media (min-width: 1380px) {
+        .svg-background {
+            top: -650px;
+        }
+    }
+    @media (min-width: 1800px) {
+        .svg-background {
+            top: -850px;
+        }
+    }   
+    .section--episode {
+        background: url('/wp-content/themes/natalie-miles/assets/waves-rainbows/rainbow-strand.svg') no-repeat;
+        background-position: -30px 80%;
+        background-size: 120%;
+        max-width: 100%;
+        padding-bottom: 24rem;
+        @include for-tablet--small {
+            .wp-block-column {
+                margin-bottom: -2.4rem;
+            }
+        }
+    }
+    &__query {
+        margin-top: 8rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 80px;
+        grid-row-gap: 80px;
+        @include for-tablet--large {
+            grid-template-columns: 1fr 1fr;
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }        
+        @include for-tablet--small {
+            grid-template-columns: 1fr;
+        }
+        .query__item {
+            img {
+                margin: auto;
+            }
+        }
+    }
+    .query__navigation {
+        display: flex;
+        justify-content: space-around;
+        padding: 8rem 0;
+        .page-numbers {
+            font-family: Nexa-Heavy;
+            color: $purple;
+            font-size: 1.6rem;
+            text-decoration:none;
+            display: block;
+            text-align: center;
+            line-height: 2;
+            background-color: $purple-light;
+            cursor: pointer;
+            padding: 1rem 0;
+            width: 5rem;
+            height: 5rem;
+            @include for-tablet--small {
+                background-color: transparent;
+                font-size: 1.2rem;
+                width: 4rem;
+                height: 4rem;
+            }
+            &.current {
+                background-color: $purple;
+                color: #fff;
+            }
+            &.prev {
+                width: 16rem;
+                @include for-tablet--small {
+                    width: 8rem;
+                }
+            }
+            &.next {
+                width: 16rem;
+                @include for-tablet--small {
+                    width: 8rem;
+                }                
+            }           
+            &.dots {
+                background-color: transparent;
+            }
+        }
+        @include for-tablet--large {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        
+        ul {
+            margin: 0 0 3rem 0;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    /*
+    .query__navigation li a,
+    .query__navigation li a:hover,
+    .query__navigation li.active a,
+    .query__navigation li.disabled {
+        font-family: Nexa-Heavy;
+        color: $purple;
+        font-size: 2rem;
+        text-decoration:none;
+        display: block;
+        text-align: center;
+        @include for-tablet--small {
+            font-size: 1.2rem;
+        }
+    }
+     
+    .query__navigation li {
+        display: block;
+        width: 7rem;
+        height: 7rem;
+        line-height: 2;
+        margin: 0 0 0 6rem;
+        @include for-tablet--small {
+            margin: 0 0 0 2rem;
+        }
+        &:first-child {
+            margin: 0 0 0 0rem;
+        } 
+        &.next {
+            width: 16rem;
+        }
+        &.prev {
+            width: 16rem;
+        }
+    }
+    
+    .query__navigation li a,
+    .query__navigation li a:hover,
+    .query__navigation li.active a,
+    .query__navigation li.disabled {
+        background-color: $purple-light;
+        cursor: pointer;
+        padding: 1rem 2rem;
+        //padding: 0.75rem;
+    } 
+
+    .query__navigation li a:hover,
+    .query__navigation li.active a {
+        background-color: $purple-light;
+    }
+    */
+}
+
+
+
+/**
+-------------------------------
+
+Online monthly energy collective 
+
+-------------------------------
+**/
+
+.page-id-855 .nm-body-bg {
+    display: none;
+}
+
+.container--frequency {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+}
+
+
+/**
+-------------------------------
+
+1:1 Sessions
+
+-------------------------------
+**/
+
+.page-id-791 .nm-body-bg {
+    display: none;
+}
+
+
+
+/**
+-------------------------------
+
+Workshops
+
+-------------------------------
+**/
+
+.page-id-841 .nm-body-bg {
+    display: none;
+}
+
+
+
+/**
+-------------------------------
+
+Workshops
+
+-------------------------------
+**/
+.page-id-789 .nm-body-bg {
+    display: none;
+}
+
+.workshop {
+    @media (max-width: 768px) {
+        h1, h2, h3, h4, h5, p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    &__image {
+        width: 100%;
+        margin: 10rem auto;
+        max-width: 600px;
+        @include for-tablet--small {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }   
+    }
+    &__summary {
+        text-align: center;
+    }
+    &__video {
+        padding-bottom: 0;
+        text-align: center;
+        h1 {
+            color: #fff;
+        }
+        .video {
+
+            &__top {
+                margin-bottom: -3px;
+                height: 360px;
+                background: url('/wp-content/themes/natalie-miles/assets/video__top.svg') no-repeat;
+                max-width: 100%;
+                background-size: 102%;
+                background-position: bottom;
+                @include for-tablet--large {
+                    height: 220px;
+                }
+                @include for-tablet--small {
+                    height: 160px;
+                }                
+            }
+            &__bottom {
+                margin-top: -3px;
+                background: url('/wp-content/themes/natalie-miles/assets/video__bottom.svg') no-repeat;
+                background-size: 102%;
+                height: 360px;
+                max-width: 100%;
+                @include for-tablet--large {
+                    height: 220px;
+                }
+                @include for-tablet--small {
+                    height: 160px;
+                }                
+                          
+            }
+        }
+    }    
+    &__includes {
+        text-align: center;
+        .geo {
+            margin-bottom: 40px;
+        }
+    }
+    &__purchase {
+        max-width: 840px;
+        margin: 0 auto;
+        .wp-block-button__link {
+            font-size: 1.2rem;
+            padding: 25px 50px;
+            color: #fff;
+            border: 2px solid #8a7ce2;;
+        }
+        .wp-block-column {
+            flex-basis: calc(50%);
+        }
+        .wp-block-column {
+            padding: 20px;
+        }
+        .wp-block-column:first-child {
+            border-right: 2px solid #8885D0;
+        }
+        .wp-block-column:not(:first-child) {
+            margin-left: 0;
+        }
+        .wp-block-column:nth-child(2n) {
+            margin-left: 0;
+        }
+    }
+    &__purchase-bundle {
+        .wp-block-button__link {
+            font-size: 1.2rem;
+            padding: 25px 50px;
+        }
+    }
+    &__query {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 80px;
+        grid-row-gap: 80px;
+        @include for-tablet--small {
+            grid-template-columns: 1fr;
+        }       
+        .query__item {
+            flex: 1 1 50%;
+        }
+        .query__series-content {
+        	p {
+        		text-align: center;
+        	}
+        	grid-column-start: 1;
+	        grid-column-end: 3;	
+	        @include for-tablet--small {
+	            grid-column-start: 1;
+	            grid-column-end: 2;
+	        }
+        }
+    }      
+}
+
+/**
+-------------------------------
+
+Offerings
+
+-------------------------------
+**/
+
+.page-id-13 .nm-body-bg {
+    display: none;
+}
+
+.cover {
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    max-width: 100%;
+}
+
+
+@media (min-width: 990px) { 
+    .cover {
+        height: 600px;
+    }
+}
+
+.title--offset {
+    background-color: rgba(255,255,255,0.85);
+    transform: translate(0, -5rem);
+    max-width: 30rem;
+    h1 {
+        @include for-tablet--small {
+            margin-top: 0;
+        }
+        padding: 2rem;
+    }
+}
+
+.offerings__items {
+    h4, h5 {
+        min-height: 6rem;
+    }
+    p {
+        min-height: 12rem;
+    }
+    @media (min-width: 600px) {
+    .wp-block-column {
+        //flex-basis: 100%;
+        //max-width: 360px;
+        //flex-grow: 0;
+        //margin: 3.2rem auto;
+    }
+    }
+}
+
+.header--offerings {
+    height: 700px;
+    width: 100%;
+    margin: auto;
+    .left-block {
+        width: 35%;
+        float: left;
+        text-align: center;
+        margin-top: 140px;
+    }      
+    .right-block {
+        width: 65%;
+        float: left;
+        height: 100%;
+    }
+    .title {
+        color: $purple;
+        position: relative;
+        z-index: 10;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 130%;
+        h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    } 
+    .title-content {
+        width: 130%;
+        padding: 40px 50px 20px 50px;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-top: -30px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.overlap--sessions {
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    .left-block {
+        width: 50%;
+        float: left;
+        .wp-block-image img {
+            max-width: 105%;
+        }
+    }
+    .right-block {
+        width: 50%;
+        float: left;
+    }
+    .title {
+        color: $purple;
+        position: relative;
+        z-index: 10;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        border-left: 3px solid #8A84D6;        
+        h1 {
+            line-height: 80px;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: left;
+            margin-left: 20px;
+        }
+    }
+    .title-content {
+        width: 105%;
+        margin-left: -5%;
+        padding: 40px 50px 20px 50px;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-top: 0;
+        background-color: $purple;
+        p {
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+.testimonial {
+    img {
+        margin: 0 auto;  
+        max-width: 120px;     
+    }
+    .geo {
+        margin-bottom: 40px;
+    }
+
+}
+
+.header--contact {
+    column-gap: 3rem;
+    .wp-block-media-text__content {
+        background: #fff;
+    }
+}
+
+/**
+-------------------------------
+
+Quiz
+
+-------------------------------
+**/
+
+.page-id-1133 .nm-body-bg {
+    display: none;
+}
+
+
+
+} //END OF #nm-style-theme selector!
+
+
+
+
+
